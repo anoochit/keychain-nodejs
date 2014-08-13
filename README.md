@@ -26,7 +26,7 @@ Get Public Key
 --------
 
 Request | Resource | Params | Description
-------------------- | ------------- 
+---------|---------|---------- | ------------- 
 POST | /keys | email, key | Add new public key
 PUT | /keys/:email | email, key | Update public key that belongs to email
 DELELET | /keys/:email | email, key | Delete public key that belongs to email
