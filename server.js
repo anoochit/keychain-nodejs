@@ -8,7 +8,9 @@ var express    = require('express'); 		// call express
 var app        = express(); 				// define our app using express
 var bodyParser = require('body-parser');
 
-var Keychain     = require('./app/models/keychain');
+var Keychain   = require('./app/models/keychain');
+
+var gitrepo    = "https://github.com/anoochit/keychain-nodejs";
 
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/Keychain');
@@ -47,6 +49,10 @@ router.route('/keys')
 			res.json({ message: 'keychain created!' });
 		});
 		
+	})
+
+	.get(function(req, res) {
+		res.redirect(gitrepo);
 	});
 
 // on routes that end in /keys/:email
@@ -96,7 +102,7 @@ router.route('/keys/:keychain_email')
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
-	res.json({ message: 'hooray! welcome to our api!' });	
+	res.redirect(gitrepo);
 });
 
 
@@ -104,7 +110,7 @@ router.get('/', function(req, res) {
 app.use('/api', router);
 
 app.get('/', function(req, res){
-  res.send('');
+  res.redirect(gitrepo);
 });
 
 
