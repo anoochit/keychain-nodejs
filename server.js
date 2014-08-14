@@ -13,7 +13,7 @@ var Keychain   = require('./app/models/keychain');
 var gitrepo    = "https://github.com/anoochit/keychain-nodejs";
 
 var mongoose   = require('mongoose');
-mongoose.connect('mongodb://0.0.0.0:27017/Keychain');
+mongoose.connect('mongodb://127.0.0.1:27017/Keychain');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
