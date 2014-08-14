@@ -11,4 +11,4 @@ cd keychain-nodejs
 
 npm install
 
-node .
+nodejs .
